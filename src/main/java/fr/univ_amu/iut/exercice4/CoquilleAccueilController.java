@@ -29,33 +29,43 @@ public class CoquilleAccueilController {
   /** Action du menu « Mes sites ». Affiche le titre correspondant au centre de la coquille. */
   @FXML
   private void onMesSites() {
-    // TODO exercice 4 : afficher le titre "Mes sites de suivi" au centre,
+    // exercice 4 : afficher le titre "Mes sites de suivi" au centre,
     // puis tracer dans la barre de statut : "Rubrique active : Mes sites".
+
+    labelTitre.textProperty().set("Mes sites de suivi");
+    labelStatut.textProperty().set("Rubrique active : Mes sites");
   }
 
   /** Action du menu « Importer une nuit ». */
   @FXML
   private void onImporter() {
-    // TODO exercice 4 : titre "Importer une nuit", statut "Rubrique active : Importer une nuit".
+    // ODO exercice 4 : titre "Importer une nuit", statut "Rubrique active : Importer une nuit".
+    labelTitre.textProperty().set("Importer une nuit");
+    labelStatut.textProperty().set("Rubrique active : Importer une nuit");
   }
 
   /** Action du menu « Vue tabulaire ». */
   @FXML
   private void onVueTabulaire() {
-    // TODO exercice 4 : titre "Vue tabulaire des passages", statut "Rubrique active : Vue
+    //  exercice 4 : titre "Vue tabulaire des passages", statut "Rubrique active : Vue
     // tabulaire".
+    labelTitre.textProperty().set("Vue tabulaire des passages");
+    labelStatut.textProperty().set("Rubrique active : Vue tabulaire");
   }
 
   /** Action du menu « Paramètres ». */
   @FXML
   private void onParametres() {
-    // TODO exercice 4 : titre "Paramètres de l'application", statut "Rubrique active : Paramètres".
+    //  exercice 4 : titre "Paramètres de l'application", statut "Rubrique active : Paramètres".
+    labelTitre.textProperty().set("Paramètres de l'application");
+    labelStatut.textProperty().set("Rubrique active : Paramètres");
   }
 
   /** Action du menu « Fichier > Quitter ». Ferme la fenêtre courante via la scène du label. */
   @FXML
   private void onQuitter() {
-    // TODO exercice 4 : fermer la fenêtre courante.
+    //  exercice 4 : fermer la fenêtre courante.
     // On récupère le Stage via la Scene du labelTitre, puis on appelle close().
+    labelTitre.getScene().getWindow().hide();
   }
 }
