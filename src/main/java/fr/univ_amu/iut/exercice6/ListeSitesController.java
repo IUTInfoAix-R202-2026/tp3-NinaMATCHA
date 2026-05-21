@@ -26,22 +26,31 @@ public class ListeSitesController {
    * @return le nombre total de cartes après ajout
    */
   public int ajouterSiteDemo() {
-    // TODO exercice 6 : ajouter une nouvelle SiteCarte au VBox `conteneurCartes`.
+    //  exercice 6 : ajouter une nouvelle SiteCarte au VBox `conteneurCartes`.
     //
     // 1. Incrémenter compteurDemo (1, 2, 3, ...).
+    compteurDemo++;
     // 2. Construire une SiteCarte et alimenter ses propriétés :
     //      - numéro de carré : "Carré " + (640000 + compteurDemo) (format à 6 chiffres garanti
     //        par la base 640000)
+    SiteCarte prem = new SiteCarte();
+    prem.setNumeroCarre("Carré " + (640000 + compteurDemo));
     //      - nom convivial : "📍 Site de démonstration #" + compteurDemo
+    prem.setNomConvivial("📍 Site de démonstration #" + compteurDemo);
     //      - nombre de points : (compteurDemo % 3) + 1
+    prem.setNombrePoints((compteurDemo % 3) + 1);
     //      - nombre de passages : compteurDemo * 2
+    prem.setNombrePassages(compteurDemo * 2);
     //      - jours depuis dernier passage : compteurDemo * 4 (0 -> 4 -> 8 -> 12 -> 16 -> ...)
+    prem.setJoursDepuisDernierPassage(compteurDemo * 4);
     //        ce qui fait passer les badges du frais à l'orange puis au gris au fil des ajouts.
+
     // 3. Ajouter la carte au début (index 0) du VBox pour que les nouveaux sites apparaissent en
     //    haut, comme dans un flux d'activité.
+    conteneurCartes.getChildren().add(0, prem);
+
     // 4. Retourner conteneurCartes.getChildren().size().
-    int total = 0;
-    return total;
+    return conteneurCartes.getChildren().size();
   }
 
   /** Retourne le nombre courant de cartes affichées (utile pour les tests). */

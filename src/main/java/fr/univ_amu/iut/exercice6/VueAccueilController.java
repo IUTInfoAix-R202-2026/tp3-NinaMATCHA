@@ -30,13 +30,14 @@ public class VueAccueilController {
    */
   @FXML
   private void initialize() {
-    // TODO exercice 6 : faire dialoguer les deux sous-contrôleurs via celui-ci.
+    // exercice 6 : faire dialoguer les deux sous-contrôleurs via celui-ci.
     //
     // 1. Brancher l'action du bouton "+ Nouveau site" de l'en-tête sur l'ajout d'une carte :
-    //      enTeteController.setActionNouveauSite(() -> {
-    //        int total = listeSitesController.ajouterSiteDemo();
-    //        enTeteController.mettreAJourCompteur(total);
-    //      });
+    enTeteController.setActionNouveauSite(
+        () -> {
+          int total = listeSitesController.ajouterSiteDemo();
+          enTeteController.mettreAJourCompteur(total);
+        });
     // 2. Initialiser le compteur de l'en-tête au nombre courant de cartes (zéro au démarrage).
   }
 
